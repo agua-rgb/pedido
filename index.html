@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Northline Store — Mi carrito</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">NORTHLINE</div>
+    <nav>
+      <button class="nav-link" data-view="home">Inicio</button>
+      <button class="nav-link" id="ordersTab" data-view="orders">Pedidos</button>
+      <button class="nav-link" data-view="help">Ayuda</button>
+    </nav>
+    <div class="account">Mi cuenta</div>
+  </header>
+
+  <main class="container">
+    <!-- CART -->
+    <section id="cartView">
+      <div class="page-title">
+        <div>
+          <div class="breadcrumb">Inicio / Carrito</div>
+          <h1>Mi carrito</h1>
+        </div>
+        <div class="cart-count">1 artículo</div>
+      </div>
+
+      <div class="layout">
+        <section class="panel">
+          <div class="product">
+            <div class="product-img">📦</div>
+            <div class="product-info">
+              <h2>Kit de trabajo — Oficina</h2>
+              <p class="muted">Incluye accesorios y material de oficina.</p>
+              <div class="product-meta">
+                <span>Cantidad: 1</span>
+                <span>Envío estándar</span>
+              </div>
+            </div>
+            <div class="price">$0.00</div>
+          </div>
+
+          <div class="shipping">
+            <h3>Dirección de entrega</h3>
+            <p>Dirección guardada de la cuenta</p>
+            <button class="link-btn">Cambiar</button>
+          </div>
+        </section>
+
+        <aside class="summary">
+          <h2>Resumen</h2>
+          <div class="row"><span>Subtotal</span><strong>$0.00</strong></div>
+          <div class="row"><span>Envío</span><strong>Incluido</strong></div>
+          <div class="divider"></div>
+          <div class="row total"><span>Total</span><strong>$0.00</strong></div>
+          <button id="shipBtn" class="primary">Enviar pedido</button>
+          <p class="small">Recibirás la información de entrega al continuar.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CONFIRMATION -->
+    <section id="confirmationView" hidden>
+      <div class="confirmation-card">
+        <div class="check">✓</div>
+        <h1>Pedido confirmado</h1>
+        <p>Tu pedido <strong>NL-4821</strong> fue recibido correctamente.</p>
+        <p class="muted">Puedes consultar el estado y las actualizaciones desde la sección Pedidos.</p>
+      </div>
+    </section>
+
+    <!-- ORDERS -->
+    <section id="ordersView" hidden>
+      <div class="page-title">
+        <div>
+          <div class="breadcrumb">Inicio / Pedidos</div>
+          <h1>Mis pedidos</h1>
+        </div>
+      </div>
+
+      <div class="order-list">
+        <article class="order-item">
+          <div class="order-top">
+            <div>
+              <div class="order-number">Pedido NL-4821</div>
+              <div class="muted">Kit de trabajo — Oficina</div>
+            </div>
+            <div class="status">Preparando envío</div>
+          </div>
+
+          <div class="order-grid">
+            <div>
+              <div class="label">Pedido realizado</div>
+              <div>12 de noviembre de 2026</div>
+            </div>
+
+            <div>
+              <div class="label">Entrega estimada actualizada</div>
+              <div class="updated-date">20 de noviembre</div>
+              <div class="updated-window">12:00 p. m. – 4:00 p. m.</div>
+            </div>
+
+            <div>
+              <div class="label">Método</div>
+              <div>Envío estándar</div>
+            </div>
+          </div>
+
+          <div class="order-note">
+            La fecha de entrega fue actualizada después de la confirmación del pedido.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="genericView" hidden>
+      <div class="panel">
+        <h1>Northline</h1>
+        <p class="muted">Selecciona una opción del menú.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- INITIAL DELIVERY MODAL -->
+  <div id="deliveryModal" class="modal-backdrop" hidden>
+    <div class="modal">
+      <button id="closeModal" class="close" aria-label="Cerrar">×</button>
+      <div class="modal-icon">🚚</div>
+      <h2>Fecha estimada de entrega</h2>
+      <p class="modal-date">18 de noviembre</p>
+      <p class="modal-window">10:00 a. m. – 2:00 p. m.</p>
+      <p class="modal-copy">
+        Tu pedido está listo para enviarse. Esta es la estimación disponible en este momento.
+      </p>
+      <button id="acceptBtn" class="primary full">Aceptar y continuar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
